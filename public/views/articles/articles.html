@@ -1,0 +1,76 @@
+<!-- Square card -->
+<div class="mdl-grid">
+	<div class="mdl-cell mdl-cell--3-col ">
+		<div class="fixed"  ng-show="showAdd">
+			<h3>ajouter un article</h3>
+			<form  ng-submit="newArticle()" >
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+			    	<input type="text" ng-model="title" class="mdl-textfield__input"   >
+			    	<label class="mdl-textfield__label">Title</label>
+			    </div>
+			    <br>
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+					<label class="mdl-textfield__label" >Description</label>
+			    	<textarea ng-model="description" class="mdl-textfield__input"  ></textarea>
+			    </div>
+			    <br>
+				<button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+			  	Publier
+				</button>
+			</form>
+		</div>
+		<div class="fixed" ng-show="showedit">
+			<h3>Editer un article</h3>
+			<button ng-click="showadd()" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"> Ajouter</button>
+			<form  ng-submit="updateArticle()">
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+			    	<input type="text" ng-model="edarticle.name" class="mdl-textfield__input"   >
+			    	<label class="mdl-textfield__label">Title</label>
+			    </div>
+			    <br>
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+					<label class="mdl-textfield__label" >Description</label>
+			    	<textarea ng-model="edarticle.description" class="mdl-textfield__input"  ></textarea>
+			    </div>
+			    <br>
+				<button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+			  	Publier
+				</button>
+			</form>
+		</div>
+	</div>
+
+	<div class="mdl-cell mdl-cell--9-col ">
+
+			<div class="demo-card-square mdl-card mdl-shadow--2dp pull-left margin-card"
+				 ng-repeat="article in articles"  id="{{article._id}}"
+				 >
+				 	<div class="mdl-card__title mdl-card--expand">
+				    	<img ng-src="{{article.image}}" class="card-img" alt="{{article.name}}">
+				    	<h5 class="card-name">{{article.name}}</h5>
+				  </div>
+				  <div class="mdl-card__supporting-text mdl-card--border">
+				  	
+				  	<h4>{{article.price}} €</h4>
+				    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+				    Aenan convallis.
+				  </div>
+				  <div  class="mdl-card__actions mdl-card--border">
+					    <a href="#/article/{{article._id}}" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+					      details
+					    </a>
+					    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+					      Panier
+					    </a>
+					    <a href="" ng-click="editArticle(article)">edit</a>
+					    <a href="" ng-click="removeArticle(article)">delite</a>
+				  </div>
+				 </div>
+				  
+			
+	
+		
+
+	</div>
+</div>
+

@@ -1,7 +1,112 @@
 doctype html
-html
-  head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-  body
-    block content
+html(lang='en')
+ head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible', ,='', content='IE=edge')
+  meta(name='viewport', ,='', content='width=device-width, initial-scale=1')
+  title Express-Angular
+  link(rel='stylesheet', href='bower_components/bootstrap/dist/css/bootstrap.css')
+  link(rel='stylesheet', href='https://fonts.googleapis.com/icon?family=Material+Icons')
+  link(rel='stylesheet', href='bower_components/material-design-lite/material.css')
+  link(rel='stylesheet', href='stylesheets/style.css')
+  script(src='bower_components/angular/angular.js')
+  script(src='bower_components/angular-route/angular-route.js')
+  script(src='bower_components/jquery/dist/jquery.js')
+  script(src='bower_components/bootstrap/dist/js/bootstrap.js')
+  script(src='bower_components/material-design-lite/material.js')
+  script(src='app.js')
+  script(src='controllers/articleCtrl.js')
+  script(src='controllers/categoryCtrl.js')
+  script(src='controllers/homeCtrl.js')
+  script(src='controllers/contactCtrl.js')
+ body(ng-app='devapp')
+  // Always shows a header, even in smaller screens.
+  .mdl-layout.mdl-js-layout.mdl-layout--fixed-header
+   header.mdl-layout__header
+    .mdl-layout__header-row
+     // Title
+     span.mdl-layout-title Dev App
+     nav.mdl-navigation
+      a.mdl-navigation__link(href='/#') Accueil
+      a.mdl-navigation__link(href='/#/articles') Articles
+      a.mdl-navigation__link(href='/#/categories') Categories
+      a.mdl-navigation__link(href='/#/Contact') Contact
+     // Add spacer, to align navigation to the right
+     .mdl-layout-spacer
+     // Navigation. We hide it in small screens.
+     nav.mdl-navigation
+      a.mdl-button.mdl-js-button.mdl-js-ripple-effect(href='#') Login
+      a.mdl-button.mdl-js-button.mdl-js-ripple-effect(href='#') Register
+      .mdl-textfield.mdl-js-textfield.mdl-textfield--expandable.mdl-textfield--floating-label.mdl-textfield--align-right
+       label.mdl-button.mdl-js-button.mdl-button--icon(for='fixed-header-drawer-exp')
+        i.material-icons search
+       .mdl-textfield__expandable-holder
+        input#fixed-header-drawer-exp.mdl-textfield__input(type='text', name='sample')
+   .mdl-layout__drawer
+    span.mdl-layout-title.mdl-layout__header vertical menu
+    nav.mdl-navigation
+     a.mdl-navigation__link(href='/#/categories') Categories
+     a.mdl-navigation__link(href='/#/articles') Articles
+     a.mdl-navigation__link(href='/#/Contact') Contact
+     a.mdl-navigation__link(href='') Link
+   main.mdl-layout__content
+    .page-content
+     .row
+      block content
+     .row
+      footer.mdl-mega-footer
+       .mdl-mega-footer__middle-section
+        .mdl-mega-footer__drop-down-section
+         input.mdl-mega-footer__heading-checkbox(type='checkbox', checked='')
+         h1.mdl-mega-footer__heading Features
+         ul.mdl-mega-footer__link-list
+          li
+           a(href='#') About
+          li
+           a(href='#') Terms
+          li
+           a(href='#') Partners
+          li
+           a(href='#') Updates
+        .mdl-mega-footer__drop-down-section
+         input.mdl-mega-footer__heading-checkbox(type='checkbox', checked='')
+         h1.mdl-mega-footer__heading Details
+         ul.mdl-mega-footer__link-list
+          li
+           a(href='#') Specs
+          li
+           a(href='#') Tools
+          li
+           a(href='#') Resources
+        .mdl-mega-footer__drop-down-section
+         input.mdl-mega-footer__heading-checkbox(type='checkbox', checked='')
+         h1.mdl-mega-footer__heading Technology
+         ul.mdl-mega-footer__link-list
+          li
+           a(href='#') How it works
+          li
+           a(href='#') Patterns
+          li
+           a(href='#') Usage
+          li
+           a(href='#') Products
+          li
+           a(href='#') Contracts
+        .mdl-mega-footer__drop-down-section
+         input.mdl-mega-footer__heading-checkbox(type='checkbox', checked='')
+         h1.mdl-mega-footer__heading FAQ
+         ul.mdl-mega-footer__link-list
+          li
+           a(href='#') Questions
+          li
+           a(href='#') Answers
+          li
+           a(href='#') Contact us
+       .mdl-mega-footer__bottom-section
+        .mdl-logo Title
+        ul.mdl-mega-footer__link-list
+         li
+          a(href='#') Help
+         li
+          a(href='#') Privacy & Terms
+

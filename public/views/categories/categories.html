@@ -1,0 +1,16 @@
+
+<br><br>
+<div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--2-col">
+      <form>
+        
+      </form>
+    </div>
+    <div class="mdl-cell mdl-cell--10-col">
+        <!-- Deletable Chip -->
+        <span class="mdl-chip mdl-chip--deletable"
+              ng-repeat="categorie in categories">
+            <span class="mdl-chip__text">{{categorie.name}}</span>
+            <button type="button" class="mdl-chip__action"><i class="material-icons">cancel</i></button>
+        </span>
+    </div>

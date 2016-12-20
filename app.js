@@ -4,10 +4,8 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
-var routes = require('./routes/index');
-var users = require('./routes/users');
-
+var config = require('./config/db');
+var mongoose = require('mongoose');
 var app = express();
 
 // view engine setup
@@ -22,8 +20,16 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', routes);
-app.use('/users', users);
+// connexion a la base de donnees
+mongoose.connect(config.db, function(err){
+  if(err) console.log(err);
+  else console.log("connexion a la base de donnees avec succes");
+});
+
+var articles = require('./routes/ArticleRoute');
+var categories = require('./routes/CategorieRoute');
+app.use(articles);
+app.use(categories);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
