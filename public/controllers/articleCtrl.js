@@ -14,7 +14,7 @@ app.controller('ArticlesCtrl', ['$scope', '$http','$location', '$routeParams', f
 			$scope.eddescription = '';
 			$scope.showAdd = true;
 			$scope.showedit = false;
-		}
+		};
 		/**
 		 * creer un nouveau article
 		 */
@@ -22,7 +22,7 @@ app.controller('ArticlesCtrl', ['$scope', '$http','$location', '$routeParams', f
 			var data = {
 			name : $scope.title,
 			description : $scope.description
-			}
+			};
 			$http.post('/article', data).success(function(data, status){
 				console.log(status);				
 			});
@@ -30,7 +30,7 @@ app.controller('ArticlesCtrl', ['$scope', '$http','$location', '$routeParams', f
 				$scope.description ='';
 				$location.path('/articles');
 			
-		}
+		};
 		/**
 		 * change form for update an article
 		 */
@@ -41,7 +41,7 @@ app.controller('ArticlesCtrl', ['$scope', '$http','$location', '$routeParams', f
 				$scope.showedit = true;
 				$scope.edarticle = article;
 			});
-		}
+		};
 		/**
 		 * updating an existing article
 		 */
@@ -50,7 +50,7 @@ app.controller('ArticlesCtrl', ['$scope', '$http','$location', '$routeParams', f
 					id :   $scope.edarticle._id,
 					name : $scope.edarticle.name,
 					description : $scope.edarticle.description
-				}
+				};
 			$http.put('/article', data).success(function(data, status){
 				console.log(status);
 			});
@@ -58,7 +58,7 @@ app.controller('ArticlesCtrl', ['$scope', '$http','$location', '$routeParams', f
 			//$scope.edarticle.description = '';
 			$location.path('/articles');
 			//$location.hash(data.id);
-		}
+		};
 		/**
 		 * updating an existing article
 		 */
@@ -76,7 +76,7 @@ app.controller('ArticlesCtrl', ['$scope', '$http','$location', '$routeParams', f
 			//$scope.edarticle.description = '';
 			$location.path('/articles');
 			//$location.hash(data.id);
-		}
+		};
 		
 		
 }]).controller('ArticleCtrl', function($scope, $http, $routeParams){
@@ -87,4 +87,4 @@ app.controller('ArticlesCtrl', ['$scope', '$http','$location', '$routeParams', f
 			console.log(data);
 			$scope.art = data;
 		});
-})
+});

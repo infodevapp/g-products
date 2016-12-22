@@ -6,12 +6,13 @@ app.config(function($routeProvider){
 
 	$routeProvider
 		.when('/',{
-			templateUrl : 'views/home.html',
-			controller : 'HomeCtrl'
-		})
-		.when('/articles',{
 			templateUrl : 'views/articles/articles.html',
 			controller : 'ArticlesCtrl'
+			
+		})
+		.when('/a-propos',{
+			templateUrl : 'views/home.html',
+			controller : 'HomeCtrl'
 		})
 		.when('/article/:id',{
 			templateUrl : 'views/articles/article.html',
@@ -21,9 +22,9 @@ app.config(function($routeProvider){
 			templateUrl : 'views/categories/categories.html',
 			controller : 'CategoryCtrl'
 		})
-		.when('/Contact',{
-			templateUrl : 'views/Contact/contact.html',
+		.when('/contact',{
+			templateUrl : 'views/contact/contact.html',
 			controller : 'ContactCtrl'
 		})
-		.otherwise({ redirectTo: '/articles' })
+		.otherwise({ redirectTo: '/' });
 });

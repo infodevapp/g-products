@@ -1,0 +1,28 @@
+{
+  "name": "g-products",
+  "homepage": "https://github.com/infodevapp/g-products",
+  "authors": [
+    "infodevapp <informatique.devapp@gmail.com>"
+  ],
+  "description": "g-products bibliothèque web",
+  "main": "app.js",
+  "keywords": [
+    "g-products"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-route": "^1.5.8",
+    "angular": "^1.5.8",
+    "jquery": "^3.1.1",
+    "material-design-lite": "^1.2.1",
+    "bootstrap": "^3.3.7"
+  }
+}

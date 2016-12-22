@@ -5,20 +5,23 @@ html(lang='en')
   meta(http-equiv='X-UA-Compatible', ,='', content='IE=edge')
   meta(name='viewport', ,='', content='width=device-width, initial-scale=1')
   title Express-Angular
-  link(rel='stylesheet', href='bower_components/bootstrap/dist/css/bootstrap.css')
   link(rel='stylesheet', href='https://fonts.googleapis.com/icon?family=Material+Icons')
-  link(rel='stylesheet', href='bower_components/material-design-lite/material.css')
-  link(rel='stylesheet', href='stylesheets/style.css')
-  script(src='bower_components/angular/angular.js')
-  script(src='bower_components/angular-route/angular-route.js')
-  script(src='bower_components/jquery/dist/jquery.js')
-  script(src='bower_components/bootstrap/dist/js/bootstrap.js')
-  script(src='bower_components/material-design-lite/material.js')
-  script(src='app.js')
-  script(src='controllers/articleCtrl.js')
-  script(src='controllers/categoryCtrl.js')
-  script(src='controllers/homeCtrl.js')
-  script(src='controllers/contactCtrl.js')
+  link(rel='stylesheet', href='css/allStyles.min.css')
+  script(src='js/scripts.min.js')
+  //
+    link(rel='stylesheet', href='bower_components/bootstrap/dist/css/bootstrap.css')
+    link(rel='stylesheet', href='bower_components/material-design-lite/material.css')
+    link(rel='stylesheet', href='stylesheets/style.css')
+    script(src='../public/bower_components/angular/angular.js')
+    script(src='../public/bower_components/angular-route/angular-route.js')
+    script(src='../public/bower_components/jquery/dist/jquery.js')
+    script(src='../public/bower_components/bootstrap/dist/js/bootstrap.js')
+    script(src='../public/bower_components/material-design-lite/material.js')
+    script(src='../public/app.js')
+    script(src='../public/controllers/articleCtrl.js')
+    script(src='../public/controllers/categoryCtrl.js')
+    script(src='../public/controllers/homeCtrl.js')
+    script(src='../public/controllers/contactCtrl.js')
  body(ng-app='devapp')
   // Always shows a header, even in smaller screens.
   .mdl-layout.mdl-js-layout.mdl-layout--fixed-header
@@ -27,10 +30,10 @@ html(lang='en')
      // Title
      span.mdl-layout-title Dev App
      nav.mdl-navigation
-      a.mdl-navigation__link(href='/#') Accueil
-      a.mdl-navigation__link(href='/#/articles') Articles
+      a.mdl-navigation__link(href='/#') Articles
+      a.mdl-navigation__link(href='/#/a-propos') A propos
       a.mdl-navigation__link(href='/#/categories') Categories
-      a.mdl-navigation__link(href='/#/Contact') Contact
+      a.mdl-navigation__link(href='/#/contact') Contact
      // Add spacer, to align navigation to the right
      .mdl-layout-spacer
      // Navigation. We hide it in small screens.
@@ -47,7 +50,7 @@ html(lang='en')
     nav.mdl-navigation
      a.mdl-navigation__link(href='/#/categories') Categories
      a.mdl-navigation__link(href='/#/articles') Articles
-     a.mdl-navigation__link(href='/#/Contact') Contact
+     a.mdl-navigation__link(href='/#/contact') Contact
      a.mdl-navigation__link(href='') Link
    main.mdl-layout__content
     .page-content
